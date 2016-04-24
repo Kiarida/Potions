@@ -1,0 +1,32 @@
+<ion-view view-title="Potions">
+  <ion-content class="padding" >
+  <div class="row">
+    <div ng-repeat='card in potions' class="col">
+      <div ng-if='card.name == "empty"' class="list card empty">
+        <div class="item col">C'est vide</div>
+      </div>
+      <div ng-if='card.name != "empty"' class ="list card full">
+        <div class="item">
+        
+          <h2>{{card.name}}</h2>
+          
+          <p>{{card.rarity}}
+          
+        </div>
+
+        <div class="item item-body">
+          <img class="full-image" src="{{card.img}}">
+          <p>
+            Effet : {{card.effect}}
+
+           {{card.desc}}
+          </p>
+          <p ng-repeat="ingredient in card.ingredients">
+            {{ingredient.name}} ({{ingredient.zone}})
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>

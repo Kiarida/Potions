@@ -1,0 +1,14 @@
+/* Empty. Add your own CSS if you like */
+.list.card{
+	height: 300px;
+	
+    border: 3px dotted grey;
+    
+
+	
+}
+.list.card.full{
+	background-color: #9bc9c7;
+    border: 1px solid white;
+    box-shadow: 0 0 0 2px #9bc9c7;
+}
