@@ -29,7 +29,7 @@ angular.module('starter.controllers', [])
 
 .controller('DeckCtrl', function($scope, $ionicModal){
   $scope.deck=[{'name':'empty'}, {'name':'empty'}, {'name':'empty'}, {'name':'empty'}, {'name':'empty'}, {'name':'empty'}];
-
+  $scope.globalpotions=[];
   $scope.potions=[];
   $scope.foret=[];
   $scope.plaine=[];
@@ -79,12 +79,16 @@ angular.module('starter.controllers', [])
       'ingredients':listing,
       'created':false
     }
+    $scope.globalpotions.push(potion);
   }
 
 createCard("Fleur", "ingrédient", 1, "fleur.jpg", "Une petite fleur trouvée dans la montagne", "montagne");
 
+var ingredientpotion1 = [{"name":"Fleur", "zone":"Montagne"}, {"name":"Caillou", "zone":"Désert"}];
+createCardPotion("Potion exotique", 2, "potion1.jpg", "Vous pouvez récolter deux fois plus d'ingrédients", "Une potion violette qui pétille", ingredientpotion1);
 
 
+console.log($scope.globalpotions);
 
 
 
