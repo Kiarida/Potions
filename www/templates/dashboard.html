@@ -1,5 +1,9 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding" >
+  <div class="pioche">
+    <button ng-click="showModal()">PIOCHER</button>
+  </div>
+
   <div class="row">
     <div ng-repeat='card in deck' class="col">
       <div ng-if='card.name == "empty"' class="list card empty">

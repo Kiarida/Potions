@@ -27,7 +27,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('DeckCtrl', function($scope){
+.controller('DeckCtrl', function($scope, $ionicModal){
   $scope.deck=[{'name':'empty'}, {'name':'empty'}, {'name':'empty'}, {'name':'empty'}, {'name':'empty'}, {'name':'empty'}];
 
   $scope.potions=[];
@@ -38,7 +38,7 @@ angular.module('starter.controllers', [])
   $scope.grotte=[];
   $scope.montagne=[];
 
-  var createCard=function(name, type, rarity, img, descrip, zone){
+    var createCard=function(name, type, rarity, img, descrip, zone){
     var ingredient={
       'name':name,
       'type':type,
@@ -67,6 +67,7 @@ angular.module('starter.controllers', [])
       $scope.montagne.push(ingredient);
       break;
     }
+    console.log($scope.montagne);
   }
   var createCardPotion=function(name, rarity, img, effect, desc, listing){
     var potion={
@@ -75,9 +76,67 @@ angular.module('starter.controllers', [])
       'img':img,
       'effect':effect,
       'desc':desc,
-      'ingredients':listing
+      'ingredients':listing,
+      'created':false
     }
   }
+
+createCard("Fleur", "ingrédient", 1, "fleur.jpg", "Une petite fleur trouvée dans la montagne", "montagne");
+
+
+
+
+
+
+  $scope.piocher=function(zone){
+    
+     switch(zone){
+      case "foret":
+      
+      break;
+      case "plaine":
+      
+      break;
+      case "desert":
+      
+      break;
+      case "lac":
+      
+      break;
+      case "grotte":
+    
+      break;
+      case "montagne":
+      
+      break;
+    }
+    $scope.closeModal();
+  }
+
+  $scope.showModal=function(){
+    $scope.modal= $ionicModal.fromTemplateUrl('templates/modal.html', {
+      scope: $scope,
+            animation: 'slide-in-up'
+          }).then(function(modal) {
+            $scope.modal = modal;
+
+            $scope.modal.show();
+
+          });
+
+          $scope.closeModal = function() {
+            
+            $scope.modal.hide();
+          };
+          //Cleanup the modal when we're done with it!
+          $scope.$on('$destroy', function() {
+            
+            $scope.modal.remove();
+          });
+
+  }
+
+
 
 
 

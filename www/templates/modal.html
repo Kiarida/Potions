@@ -1,0 +1,16 @@
+<ion-modal-view >
+    <ion-header-bar>
+      <h1 class="title">Event notification</h1>
+    </ion-header-bar>
+    <ion-content>
+    <div ng-click="piocher('foret')" class="zone foret">Forêt</div>
+    <div ng-click="piocher('plaine')" class="zone plaine">Plaine</div>
+    <div ng-click="piocher('lac')" class="zone lac">Lac</div>
+    <div ng-click="piocher('desert')" class="zone desert">Désert</div>
+    <div ng-click="piocher('grotte')" class="zone grotte">Grotte</div>
+    <div ng-click="piocher('montagne')" class="zone montagne">Montagne</div>
+
+
+          <button class="button button-full button-energized" ng-click="closeModal()">Done</button>
+    </ion-content>
+ </ion-modal-view>

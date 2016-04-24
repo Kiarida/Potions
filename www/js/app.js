@@ -81,7 +81,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/potions',
     views: {
       'tab-potions': {
-        templateUrl: 'templates/tab-potions.html',
+        templateUrl: 'templates/potions.html',
         controller: 'DeckCtrl'
       }
     }
