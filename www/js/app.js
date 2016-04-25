@@ -36,7 +36,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   .state('home', {
     url:'/home',
     templateUrl:'templates/home.html',
-    controller:'DeckCtrl'
+    controller:'LogoCtrl'
     
   })
   

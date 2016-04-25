@@ -17,8 +17,12 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('LogoCtrl', function($scope, $state) {
+  $scope.goTo=function(){
+    $state.go('dashboard');
+    
+
+  }
 })
 
 .controller('AccountCtrl', function($scope) {
@@ -57,8 +61,8 @@ angular.module('starter.controllers', [])
       case "foret":
       $scope.foret.push(ingredient);
       break;
-      case "plaine":
-      $scope.plaine.push(ingredient);
+      case "marecage":
+      $scope.marecage.push(ingredient);
       break;
       case "desert":
       $scope.desert.push(ingredient);
@@ -73,9 +77,9 @@ angular.module('starter.controllers', [])
       $scope.montagne.push(ingredient);
       break;
     }
-    $scope.deck.push(ingredient); 
-    $scope.deck.push(ingredient);
-    console.log($scope.montagne);
+    //$scope.deck.push(ingredient); 
+    //$scope.deck.push(ingredient);
+
   }
   var createCardPotion=function(name, rarity, img, effect, desc, listing){
     var potion={
@@ -88,7 +92,7 @@ angular.module('starter.controllers', [])
       'created':false
     }
     $scope.globalpotions.push(potion);
-    $scope.potions.push(potion);
+    //$scope.potions.push(potion);
     //console.log($scope.potions[0]);
   }
 
@@ -133,7 +137,7 @@ createCard("Campanule", "ingredient", 1, "campanule.png", "Une jolie fleur viole
 createCard("Plume d'aigle", "ingredient", 1, "plume d'aigle.png", "Une plume perdue pendant un vol majestueux", "montagne", null, null);
 
 //Ingrédients des marécages
-createCard("Grume de bois mort", "ingredient", 1, "grume de bois mort.png", "Une grumme restée trop longtemps dans les marécages", "marecage", null, null);
+createCard("Grume de bois mort", "ingredient", 1, "grume de bois mort.png", "Une grume restée trop longtemps dans les marécages", "marecage", null, null);
 createCard("Vas putride", "ingredient", 1, "vase putride.png", "Une accumulation de vase pendant des années", "marecage", null, null);
 createCard("Goudron", "ingredient", 1, "goudron.jpg", "Du goudron obtenu depuis diverses matières", "marecage", null, null);
 
@@ -200,11 +204,10 @@ if(debut ==true){
             $scope.modal.hide();
           };
           $scope.piochepaquet=function(){ 
-            console.log("piochepaquet");
-            console.log($scope.globalpotions.length);
+            console.log("blibli");
             $scope.random = Math.floor((Math.random() * ($scope.globalpotions.length -1)));
             $scope.potions.push($scope.globalpotions[$scope.random]);
-            console.log($scope.random);
+          
             compteur++;
             
 
@@ -227,13 +230,8 @@ if(debut ==true){
           });
         }
 }
-
-  $scope.goTo=function(){
-    $state.go('dashboard');
-     piocherdebut();
-
-  }
-
+ piocherdebut();
+ 
   $scope.piocher=function(zone){
     
     
@@ -246,6 +244,7 @@ if(debut ==true){
       break;
       case "plaine":
       var random = Math.floor((Math.random() * ($scope.marecage.length -1)));
+      
       $scope.deck.push($scope.marecage[random]);
       $scope.background="../img/SwampScene.svg";
       break;
@@ -334,5 +333,6 @@ if(debut ==true){
     potion.created=false;
   }
 
+ 
 
 })
