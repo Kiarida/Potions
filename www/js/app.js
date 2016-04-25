@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.directive'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.directive', 'angular-flippy'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -33,7 +33,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   
   // Each tab has its own nav history stack:
-
+  .state('home', {
+    url:'/home',
+    templateUrl:'templates/home.html',
+    controller:'DeckCtrl'
+    
+  })
   
   .state('dashboard', {
     url:'/dashboard',
@@ -43,6 +48,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/dashboard');
+  $urlRouterProvider.otherwise('/home');
 
 });

@@ -27,18 +27,20 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('DeckCtrl', function($scope, $ionicModal, $document){
+.controller('DeckCtrl', function($scope, $ionicModal, $rootScope ,$state){
   $scope.deck=[];
   $scope.globalpotions=[];
   $scope.potions=[];
   $scope.foret=[];
-  $scope.plaine=[];
+  $scope.marecage=[];
   $scope.desert=[];
   $scope.lac=[];
   $scope.grotte=[];
   $scope.montagne=[];
   $scope.custom;
   $scope.custompotion;
+
+
 
     var createCard=function(name, type, rarity, img, descrip, zone, effect, effectabr){
     var ingredient={
@@ -96,35 +98,100 @@ var ingredientpotion1 = [{"name":"Fleur", "zone":"Montagne"}, {"name":"Caillou",
 createCardPotion("Potion exotique", 2, "potion1.jpg", "Vous pouvez récolter deux fois plus d'ingrédients", "Une potion violette qui pétille", ingredientpotion1);
 
 
-console.log($scope.globalpotions);
+var debut = true;
+var compteur = 0;
+$scope.random =-1;
+$scope.rotate=true;
 
+var piocherdebut = function(){
+  console.log("hila");
+if(debut ==true){
+  console.log("bla");
+  $scope.modal= $ionicModal.fromTemplateUrl('templates/modalpotions.html', {
+      scope: $scope,
+            animation: 'slide-in-up'
+          }).then(function(modal) {
+            $scope.modal = modal;
+          
+            $scope.modal.show();
 
+          });
+
+          $scope.closeModal = function() {
+            
+            $scope.modal.hide();
+          };
+          $scope.piochepaquet=function(){ 
+            console.log("piochepaquet");
+            console.log($scope.globalpotions.length);
+            $scope.random = Math.floor((Math.random() * ($scope.globalpotions.length -1)));
+            $scope.potions.push($scope.globalpotions[$scope.random]);
+            console.log($scope.random);
+            compteur++;
+            
+
+          }
+          $scope.randomize=function(){
+            
+            $scope.random=-1;
+            $rootScope.$broadcast('FLIP_EVENT_IN');
+            if(compteur == 2){
+              $scope.closeModal();
+              debut=false;
+            }
+            //console.log("heya");
+            //$scope.rotate=!$scope.rotate;
+          }
+          //Cleanup the modal when we're done with it!
+          $scope.$on('$destroy', function() {
+            
+            $scope.modal.remove();
+          });
+        }
+}
+
+  $scope.goTo=function(){
+    $state.go('dashboard');
+     piocherdebut();
+
+  }
 
   $scope.piocher=function(zone){
-    if($scope.deck.length == 6){
-      console.log("on doit défausser");
-    }
-    else{
+    
+    
       switch(zone){
       case "foret":
+      var random = Math.floor((Math.random() * ($scope.foret.length -1)));
+      $scope.deck.push($scope.foret[random]);
+
       $scope.background="../img/ForestScene-01.svg";
       break;
       case "plaine":
-      
+      var random = Math.floor((Math.random() * ($scope.marecage.length -1)));
+      $scope.deck.push($scope.marecage[random]);
+      $scope.background="../img/SwampScene.svg";
       break;
       case "desert":
+      var random = Math.floor((Math.random() * ($scope.desert.length -1)));
+      $scope.deck.push($scope.desert[random]);
       $scope.background="../img/DesertScene.svg";
       break;
       case "lac":
-      
+      var random = Math.floor((Math.random() * ($scope.lac.length -1)));
+      $scope.deck.push($scope.lac[random]);
+      $scope.background="../img/LakeScene.svg";
       break;
       case "grotte":
-      
+      var random = Math.floor((Math.random() * ($scope.grotte.length -1)));
+      $scope.deck.push($scope.grotte[random]);
+      $scope.background="../img/CaveScene.svg";
       break;
       case "montagne":
+      var random = Math.floor((Math.random() * ($scope.montagne.length -1)));
+      $scope.deck.push($scope.montagne[random]);
       $scope.background="../img/MountainScene.svg";
       break;
-    }
+    
     }
     
     $scope.closeModal();
@@ -147,7 +214,11 @@ console.log($scope.globalpotions);
   }
 
   $scope.showModal=function(){
-    $scope.modal= $ionicModal.fromTemplateUrl('templates/modal.html', {
+    if($scope.deck.length == 6){
+      console.log("on doit défausser");
+    }
+      else{
+        $scope.modal= $ionicModal.fromTemplateUrl('templates/modal.html', {
       scope: $scope,
             animation: 'slide-in-up'
           }).then(function(modal) {
@@ -166,6 +237,10 @@ console.log($scope.globalpotions);
             
             $scope.modal.remove();
           });
+      }
+      
+    
+    
 
   }
 

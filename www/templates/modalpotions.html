@@ -1,0 +1,61 @@
+<ion-modal-view >
+    <ion-header-bar>
+      <h1 class="title">Potions</h1>
+    </ion-header-bar>
+    <ion-content>
+    <div class="draw potions">
+    <div ng-show="rotate" ng-click="piochepaquet(); rotate=!rotate" class="paquetpotions">
+
+    </div>
+    
+    <flippy
+              class="fancy"
+              flip="['click']"
+              flip-back="['custom:FLIP_EVENT_IN']"
+              duration="800"
+              timing-function="ease-in-out"
+              ng-show="random > -1"
+              >
+
+        <flippy-back>
+          <div class="list card full potion">
+            <div class="item">
+         
+        </div>
+        <div class="item item-body">
+          
+
+        </div>
+      </div>
+      <button ng-click="randomize(); rotate=!rotate"> Ok </button>
+        </flippy-back>
+
+        <flippy-front>
+            <div class ="list card full potion" ng-model="globalpotions[random]" ng-init="globalpotions[random]">
+                <div class="item">
+                  <h2>{{globalpotions[random].name}}<p>{{globalpotions[random].rarity}}</p></h2>
+                </div>
+                <div class="item item-body">
+                <img class="full-image" src="{{globalpotions[random].img}}">
+                  <p>
+                    Effet : {{globalpotions[random].effect}}
+
+                   {{globalpotions[random].desc}}
+                  </p>
+                  <p ng-repeat="ingredient in card.ingredients">
+                    {{ingredient.name}} ({{ingredient.zone}})
+                  </p>
+
+                </div>
+            </div>
+
+        </flippy-front>
+
+      </flippy>
+
+    
+</div>
+
+         
+    </ion-content>
+ </ion-modal-view>
