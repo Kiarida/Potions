@@ -1,5 +1,5 @@
 <ion-view hide-nav-bar="true">
-  <ion-content class="padding" >
+  <ion-content class="padding" style="background-image:url({{background}});" >
   <div class="row potions">
       <!-- <div ng-if="potions.length == 0" class="list card empty col" ng-repeat="carte in [0,1,2]">
         <div class="item">C'est vide</div>
@@ -7,7 +7,7 @@
     <div ng-if="potions.length > 0"> -->
     <div ng-repeat='carte in [0,1,2]' class="col">
       
-      <div ng-if='potions[carte].name' ng-init="card = potions[carte]" class ="list card full">
+      <div ng-if='potions[carte].name' ng-init="card = potions[carte]" ng-class="{'fabricated':card.created}" class ="list card full" ng-click="custompotion=!custompotion">
         <div class="item">
         
           <h2>{{card.name}}<p>{{card.rarity}}</p></h2>
@@ -15,6 +15,9 @@
         </div>
 
         <div class="item item-body">
+
+        <button ng-show="custompotion && !card.created" ng-click="creerPotion(card)">Fabriquer</button>
+        <button ng-show="custompotion && card.created" ng-click="userPotion(card)">Utiliser</button>
           <img class="full-image" src="{{card.img}}">
           <p>
             Effet : {{card.effect}}
@@ -24,6 +27,7 @@
           <p ng-repeat="ingredient in card.ingredients">
             {{ingredient.name}} ({{ingredient.zone}})
           </p>
+
         </div>
       </div>
       <div ng-if='!potions[carte].name' class="list card empty">
@@ -37,20 +41,19 @@
   </div>
 
   <div class="row">
-    <div ng-repeat='carte in [0,1,2,3,4,5]' class="col">
+    <div ng-repeat='carte in [0,1,2,3,4,5] track by $index' class="col">
       <div ng-if='!deck[carte].name'  class="list card empty">
         <div class="item col">C'est vide</div>
       </div>
-      <div ng-if='deck[carte].name' ng-init="card=deck[carte]" class ="list card full">
-        <div class="item" ng-style="mystyle" ng-click="touched()">
-        
+      <div ng-if='deck[carte].name' id="cartelem{{$index}}" ng-init="card=deck[carte]"  ng-class="{'touched':custom}" class ="list card full" ng-click="custom=!custom">
+
+        <div class="item">
           <h2>{{card.name}}</h2>
-          
           <p class="rarity">{{card.rarity}}</p>
 
           <div ng-if="card.type == 'ingredient'" class="iconroundi"></div>
-        <div ng-if="card.type == 'trap'" class="iconroundt"></div>
-        <div ng-if="card.type == 'selftrap'" class="iconrounds"></div>
+          <div ng-if="card.type == 'trap'" class="iconroundt"></div>
+          <div ng-if="card.type == 'selftrap'" class="iconrounds"></div>
         </div>
         
         <div class="item item-body">
@@ -61,6 +64,9 @@
           </p>
          
         </div>
+        
+        <button ng-if="custom && card.type != 'ingredient'">Utiliser</button>
+        <button ng-show="custom" ng-click="defausser(card)">Défausser</button>
       </div>
     </div>
   </div>

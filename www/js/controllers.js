@@ -27,7 +27,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('DeckCtrl', function($scope, $ionicModal){
+.controller('DeckCtrl', function($scope, $ionicModal, $document){
   $scope.deck=[];
   $scope.globalpotions=[];
   $scope.potions=[];
@@ -37,6 +37,8 @@ angular.module('starter.controllers', [])
   $scope.lac=[];
   $scope.grotte=[];
   $scope.montagne=[];
+  $scope.custom;
+  $scope.custompotion;
 
     var createCard=function(name, type, rarity, img, descrip, zone, effect, effectabr){
     var ingredient={
@@ -84,7 +86,7 @@ angular.module('starter.controllers', [])
       'created':false
     }
     $scope.globalpotions.push(potion);
-    //$scope.potions.push(potion);
+    $scope.potions.push(potion);
     //console.log($scope.potions[0]);
   }
 
@@ -105,26 +107,26 @@ console.log($scope.globalpotions);
     else{
       switch(zone){
       case "foret":
-      
+      $scope.background="../img/ForestScene-01.svg";
       break;
       case "plaine":
       
       break;
       case "desert":
-      
+      $scope.background="../img/DesertScene.svg";
       break;
       case "lac":
       
       break;
       case "grotte":
-    
-      break;
-      case "montagne":
       
       break;
+      case "montagne":
+      $scope.background="../img/MountainScene.svg";
+      break;
     }
     }
-     
+    
     $scope.closeModal();
   }
 
@@ -167,17 +169,17 @@ console.log($scope.globalpotions);
 
   }
 
-  $scope.touched=function(){
-    var style={'width': '120%',
-  'height':'50%',
-  'z-index': '100',
-  'margin-top': '-50px'}
-
-    //$scope.mystyle=style;
+  $scope.touched=function(id){
+   
   }
 
+  $scope.creerPotion=function(potion){
+    potion.created=true;
+  }
 
-
+  $scope.userPotion=function(potion){
+    potion.created=false;
+  }
 
 
 })
