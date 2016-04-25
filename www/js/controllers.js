@@ -33,6 +33,7 @@ angular.module('starter.controllers', [])
 
 .controller('DeckCtrl', function($scope, $ionicModal, $rootScope ,$state){
   $scope.deck=[];
+  $scope.background="../img/Tower.svg";
   $scope.globalpotions=[];
   $scope.potions=[];
   $scope.foret=[];
@@ -43,6 +44,7 @@ angular.module('starter.controllers', [])
   $scope.montagne=[];
   $scope.custom;
   $scope.custompotion;
+
 
 
 
@@ -204,16 +206,16 @@ if(debut ==true){
             $scope.modal.hide();
           };
           $scope.piochepaquet=function(){ 
-            console.log("blibli");
+           
             $scope.random = Math.floor((Math.random() * ($scope.globalpotions.length -1)));
-            $scope.potions.push($scope.globalpotions[$scope.random]);
-          
+            
             compteur++;
             
 
           }
           $scope.randomize=function(){
-            
+            $scope.potions.push($scope.globalpotions[$scope.random]);
+          
             $scope.random=-1;
             $rootScope.$broadcast('FLIP_EVENT_IN');
             if(compteur == 2){
