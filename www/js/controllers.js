@@ -92,8 +92,8 @@ angular.module('starter.controllers', [])
 
 //Ingrédients de la forêt
 createCard("Poil de sanglier", "ingredient", 1, "poil de sanglier.png", "Un poil de sanglier perdu dans la forêt", "foret", null, null);
-createCard("Champignon vénéneux", "ingredient", 1, "champignon 1.png", "Un gros champignon rouge et blanc", "foret", null, null);
-createCard("Plume magique", "ingredient", 1, "plume 3.png", "Une plume tombée d'un oiseau mystérieux", "foret", null, null);
+createCard("Champignon vénéneux", "ingredient", 2, "champignon 1.png", "Un gros champignon rouge et blanc", "foret", null, null);
+createCard("Plume magique", "ingredient", 2, "plume 3.png", "Une plume tombée d'un oiseau mystérieux", "foret", null, null);
 createCard("Mousse", "ingredient", 1, "mousse.png", "De la mousse fantastique", "foret", null, null);
 createCard("Feuille de chêne", "ingredient", 1, "feuille de chêne.png", "Une feuille tombée d'un grand chêne après une tempête de vent", "foret", null, null);
 createCard("Résine de baobab", "ingredient", 1, "résine de baobab.png", "La résine d'un très grand arbre", "foret", null, null);
@@ -136,9 +136,43 @@ createCard("Vas putride", "ingredient", 1, "vase putride.png", "Une accumulation
 createCard("Goudron", "ingredient", 1, "goudron.jpg", "Du goudron obtenu depuis diverses matières", "marecage", null, null);
 
 
-var ingredientpotion1 = [{"name":"Fleur", "zone":"Montagne"}, {"name":"Caillou", "zone":"Désert"}];
-createCardPotion("Potion exotique", 2, "potion1.jpg", "Vous pouvez récolter deux fois plus d'ingrédients", "Une potion violette qui pétille", ingredientpotion1);
+//Potions de niveau 2
+var ingredientpotion1 = [{"name":"Huile de roche", "zone":"Grotte"}, {"name":"Eau d'oasis", "zone":"Désert"}];
+createCardPotion("Potion exotique", 2, "potion1.jpg", "Vous pouvez récolter deux fois plus d'ingrédients pendant deux tours", "Une potion violette qui pétille", ingredientpotion1);
 
+var ingredientpotion2 = [{"name":"Craie", "zone":"Grotte"}, {"name":"Sable", "zone":"Désert"}];
+createCardPotion("Potion craieuse", 2, "potion2.jpg", "Vous pouvez avancer de deux cases et récolter l'ingrédient de la dernière case pendant deux tours", "Une potion pas très liquide", ingredientpotion2);
+
+var ingredientpotion3 = [{"name":"Fossile", "zone":"Grotte"}, {"name":"Écaille de poisson", "zone":"Lac"}];
+createCardPotion("Potion de la mer", 2, "potion3.jpg", "Vous pouvez jouer pendant deux tours", "Une potion qui sent le poisson", ingredientpotion3);
+
+var ingredientpotion4 = [{"name":"Charbon", "zone":"Grotte"}, {"name":"Vase", "zone":"Lac"}];
+createCardPotion("Potion noire", 2, "potion4.jpg", "Vous pouvez passer une fois sur un volcan", "Une potion sombre", ingredientpotion4);
+
+var ingredientpotion5 = [{"name":"Minerai", "zone":"Grotte"}, {"name":"Plume magique", "zone":"Forêt"}];
+createCardPotion("Potion colorée", 2, "potion5.jpg", "Vous pouvez contrer les pièges pendant trois tours", "Une potion qui en fait voir de toutes les couleurs", ingredientpotion5);
+
+var ingredientpotion6 = [{"name":"Champignon vénéneux", "zone":"Grotte"}, {"name":"Larve", "zone":"Lac"}];
+createCardPotion("Potion gluante", 2, "potion4.jpg", "Vous pouvez garder sept cartes dans votre sac à dos pendant deux tours", "Une potion qui colle aux mains", ingredientpotion6);
+
+//Potions de niveau 1
+var ingredientpotion7 = [{"name":"Mousse", "zone":"Forêt"}, {"name":"Feuille de palmier", "zone":"Désert"}];
+createCardPotion("Potion verte", 1, "potion7.jpg", "Vous pouvez récolter deux fois plus d'ingrédients", "Une potion riche en chlorophylle", ingredientpotion7);
+
+var ingredientpotion8 = [{"name":"Feuille de fougère royale", "zone":"Forêt"}, {"name":"Épine de cactus", "zone":"Désert"}];
+createCardPotion("Potion piquante", 1, "potion8.jpg", "Vous pouvez avancer de deux cases et récolter l'ingrédient de la dernière case pendant deux tours", "Une potion qui déchire", ingredientpotion8);
+
+var ingredientpotion9 = [{"name":"Résine de baobab", "zone":"Forêt"}, {"name":"Grume de bois mort", "zone":"Marécage"}];
+createCardPotion("Potion boisée", 1, "potion9.jpg", "Vous pouvez jouer pendant deux tours", "Une potion qui sent le bois", ingredientpotion9);
+
+var ingredientpotion10 = [{"name":"Poil de sanglier", "zone":"Forêt"}, {"name":"Poil de dromadaire", "zone":"Désert"}];
+createCardPotion("Potion animale", 1, "potion10.jpg", "Vous pouvez passer une fois sur un volcan", "Une potion poilue", ingredientpotion10);
+
+var ingredientpotion11 = [{"name":"Algue", "zone":"Lac"}, {"name":"Vase putride", "zone":"Marécage"}];
+createCardPotion("Potion odorante", 1, "potion11.jpg", "Vous pouvez contrer les pièges pendant trois tours", "Une potion à l'odeur forte", ingredientpotion11);
+
+var ingredientpotion12 = [{"name":"Noisette", "zone":"Forêt"}, {"name":"Coquillage", "zone":"Lac"}];
+createCardPotion("Potion à coquilles", 1, "potion12.jpg", "Vous pouvez garder sept cartes dans votre sac à dos pendant deux tours", "Une potion dure pour les dents", ingredientpotion12);
 
 console.log($scope.globalpotions);
 
