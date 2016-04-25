@@ -28,7 +28,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DeckCtrl', function($scope, $ionicModal){
-  $scope.deck=[{'name':'empty'}, {'name':'empty'}, {'name':'empty'}, {'name':'empty'}, {'name':'empty'}, {'name':'empty'}];
+  $scope.deck=[];
   $scope.globalpotions=[];
   $scope.potions=[];
   $scope.foret=[];
@@ -38,14 +38,16 @@ angular.module('starter.controllers', [])
   $scope.grotte=[];
   $scope.montagne=[];
 
-    var createCard=function(name, type, rarity, img, descrip, zone){
+    var createCard=function(name, type, rarity, img, descrip, zone, effect, effectabr){
     var ingredient={
       'name':name,
       'type':type,
       'rarity':rarity,
       'img':img,
       'descrip':descrip,
-      'zone':zone
+      'zone':zone,
+      'effect':effect,
+      "effectabr":effectabr
     }
     switch(zone){
       case "foret":
@@ -67,6 +69,8 @@ angular.module('starter.controllers', [])
       $scope.montagne.push(ingredient);
       break;
     }
+    $scope.deck.push(ingredient); 
+    $scope.deck.push(ingredient);
     console.log($scope.montagne);
   }
   var createCardPotion=function(name, rarity, img, effect, desc, listing){
@@ -80,9 +84,11 @@ angular.module('starter.controllers', [])
       'created':false
     }
     $scope.globalpotions.push(potion);
+    //$scope.potions.push(potion);
+    //console.log($scope.potions[0]);
   }
 
-createCard("Fleur", "ingrédient", 1, "fleur.jpg", "Une petite fleur trouvée dans la montagne", "montagne");
+createCard("Fleur", "ingredient", 1, "fleur.jpg", "Une petite fleur trouvée dans la montagne", "montagne", null, null);
 
 var ingredientpotion1 = [{"name":"Fleur", "zone":"Montagne"}, {"name":"Caillou", "zone":"Désert"}];
 createCardPotion("Potion exotique", 2, "potion1.jpg", "Vous pouvez récolter deux fois plus d'ingrédients", "Une potion violette qui pétille", ingredientpotion1);
@@ -93,8 +99,11 @@ console.log($scope.globalpotions);
 
 
   $scope.piocher=function(zone){
-    
-     switch(zone){
+    if($scope.deck.length == 6){
+      console.log("on doit défausser");
+    }
+    else{
+      switch(zone){
       case "foret":
       
       break;
@@ -114,7 +123,25 @@ console.log($scope.globalpotions);
       
       break;
     }
+    }
+     
     $scope.closeModal();
+  }
+
+  $scope.useTrap=function(trap){
+    if(trap.type=="selftrap"){
+      //selon l'effet
+
+
+     $scope.deck.splice($scope.deck.indexOf(trap), 1);      
+    }
+    else{
+      $scope.deck.splice($scope.deck.indexOf(trap), 1);
+    }
+  }
+
+  $scope.defausser=function(card){
+    $scope.deck.splice($scope.deck.indexOf(card), 1);
   }
 
   $scope.showModal=function(){
@@ -138,6 +165,15 @@ console.log($scope.globalpotions);
             $scope.modal.remove();
           });
 
+  }
+
+  $scope.touched=function(){
+    var style={'width': '120%',
+  'height':'50%',
+  'z-index': '100',
+  'margin-top': '-50px'}
+
+    //$scope.mystyle=style;
   }
 
 
