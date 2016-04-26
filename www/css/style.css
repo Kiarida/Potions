@@ -88,7 +88,7 @@ ion-content.padding.scroll-content.ionic-scroll{
   position: relative;
     display: inline-block;
     width: 190px;
-    height: 160px;  
+    height: 164px;  
     margin:0;
 
 }
@@ -112,32 +112,32 @@ ion-content.padding.scroll-content.ionic-scroll{
 }
 
 .zone.plaine{
-	left:46%;
+	left:39%;
 	top:31%;
 	background-image: url("../img/SwampLogo.png");
 
 }
 .zone.lac{
-	left:32.4%;
-	top:55%;
+	left:19.5%;
+	top:68%;
 	background-image: url("../img/LakeLogo.png");
 
 }
 .zone.desert{
-	left:-1%;
-	top:75%;
+	left:-19%;
+	top:90%;
 	background-image: url("../img/DesertLogo.png");
 
 }
 .zone.grotte{
-	left:-34%;
+	left:-57%;
 	top:30%;
 	background-image: url("../img/CaveLogo.png");
 
 }
 .zone.montagne{
-	left: -47.6%;
-	top: 55%;	
+	left: 22%;
+	top: 35%;	
 	background-image: url("../img/MountainLogo.png");
 
 }
@@ -162,7 +162,7 @@ background: transparent;
 } 
 .zones{
 	height: 100%;
-	margin-left: 4%;
+	margin-left: 2%;
 }
 
 .list.card.full.touched{
