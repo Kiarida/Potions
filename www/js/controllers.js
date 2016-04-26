@@ -195,7 +195,7 @@ createCard("Yéti", "trap", 1, "PiegeThrow.png", "", "montagne", "Vous êtes té
 
 //Ingrédients des marécages
 createCard("Grume de bois mort", "ingredient", 1, "FeuilleChene.png", "Une grume restée trop longtemps dans les marécages", "marecage", null, null);
-createCard("Vas putride", "ingredient", 1, "FeuilleChene.png", "Une accumulation de vase pendant des années", "marecage", null, null);
+createCard("Vase putride", "ingredient", 1, "FeuilleChene.png", "Une accumulation de vase pendant des années", "marecage", null, null);
 createCard("Goudron", "ingredient", 1, "FeuilleChene.png", "Du goudron obtenu depuis diverses matières", "marecage", null, null);
 
 createCard("Moustiques", "selftrap", 1, "PiegeSelf.png", "", "marecage", "Défaussez une carte", null);
