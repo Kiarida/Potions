@@ -10,8 +10,9 @@
 
         <div class="item item-body">
 
-        <button ng-show="custompotion && !card.created" ng-click="creerPotion(card)">Fabriquer</button>
-        <button ng-show="custompotion && card.created" ng-click="userPotion(card)">Utiliser</button>
+          
+        
+          
           <img class="full-image" style="width:250px"
            src="{{card.img}}">
           <p>
@@ -23,6 +24,8 @@
           </p>
 
         </div>
+        <button class="button button-royal" ng-show="custompotion && !card.created" ng-click="creerPotion(card)">Fabriquer</button>
+        <button class="button button-royal" ng-show="custompotion && card.created" ng-click="userPotion(card)">Utiliser</button>
       </div>
       <div ng-if='!potions[carte].name' class="list card empty">
         <div class="item">C'est vide</div>
@@ -69,8 +72,8 @@
         </div>
         
         <div class="button-bar">
-        <button class="button button-energized" ng-if="custom && card.type != 'ingredient'">Utiliser</button>
-        <button class="button button-dark" ng-show="custom" ng-click="defausser(card)">Défausser</button>
+        <button class="button button-block button-energized" ng-if="custom && card.type != 'ingredient'">Utiliser</button>
+        <button class="button button-block button-dark" ng-show="custom" ng-click="defausser(card)">Défausser</button>
         </div>
       </div>
 
