@@ -67,6 +67,10 @@ angular.module('starter.controllers', [])
       $scope.globaltrap.push(ingredient);
       //$scope.deck.push(ingredient);
     }
+    if(ingredient.name=="Mousse"){
+      $scope.deck[0]=ingredient;
+    }
+
     switch(zone){
       case "foret":
       $scope.foret.push(ingredient);
@@ -107,14 +111,14 @@ angular.module('starter.controllers', [])
   }
 
 //Ingrédients de la forêt
-createCard("Poil de sanglier", "ingredient", 1, "poil de sanglier.png", "Un poil de sanglier perdu dans la forêt", "foret", null, null);
-createCard("Champignon vénéneux", "ingredient", 2, "champignon 1.png", "Un gros champignon rouge et blanc", "foret", null, null);
-createCard("Plume magique", "ingredient", 2, "plume 3.png", "Une plume tombée d'un oiseau mystérieux", "foret", null, null);
-createCard("Mousse", "ingredient", 1, "mousse.png", "De la mousse fantastique", "foret", null, null);
-createCard("Feuille de chêne", "ingredient", 1, "feuille de chêne.png", "Une feuille tombée d'un grand chêne après une tempête de vent", "foret", null, null);
-createCard("Résine de baobab", "ingredient", 1, "résine de baobab.png", "La résine d'un très grand arbre", "foret", null, null);
-createCard("Feuille de fougère royale", "ingredient", 1, "feuille de fougère royale.png", "Une feuille de la plus belle fougère de la forêt", "foret", null, null);
-createCard("Noisette", "ingredient", 1, "noisette.png", "Une noisette oubliée par un écureuil volant", "foret", null, null);
+createCard("Poil de sanglier", "ingredient", 1, "poil de sanglier.png", "Un poil de sanglier perdu dans la forêt.", "foret", null, null);
+createCard("Champignon vénéneux", "ingredient", 2, "champignon 1.png", "Un gros champignon rouge et blanc.", "foret", null, null);
+createCard("Plume magique", "ingredient", 2, "plume 3.png", "Une plume tombée d'un oiseau mystérieux.", "foret", null, null);
+createCard("Mousse", "ingredient", 1, "Mousse.png", "De la mousse fantastique.", "foret", null, null);
+createCard("Feuille de chêne", "ingredient", 1, "feuille de chêne.png", "Une feuille tombée d'un grand chêne après une tempête de vent.", "foret", null, null);
+createCard("Résine de baobab", "ingredient", 1, "résine de baobab.png", "La résine d'un très grand arbre.", "foret", null, null);
+createCard("Feuille de fougère royale", "ingredient", 1, "feuille de fougère royale.png", "Une feuille de la plus belle fougère de la forêt.", "foret", null, null);
+createCard("Noisette", "ingredient", 1, "noisette.png", "Une noisette oubliée par un écureuil volant.", "foret", null, null);
 
 createCard("Noisette piégée", "selftrap", 1, "noisette.png", "Une noisette oubliée par un écureuil volant", "foret", "Vous ne pouvez pas jouer pendant 2 tours.", null);
 
@@ -246,7 +250,7 @@ if(debut ==true){
           });
         }
 }
- piocherdebut();
+ //piocherdebut();
  
   $scope.piocher=function(zone){
     var stop=-1;

@@ -11,6 +11,9 @@ margin-left: 40%;
 margin-top: 15%;
 }
 
+.full-image.ingred{
+	width: 30%;
+}
 
 ion-content.padding.scroll-content.ionic-scroll{
 	background-size: 2500px;
@@ -19,7 +22,7 @@ ion-content.padding.scroll-content.ionic-scroll{
 }
 .list.card.full{
 	background-color: #F2F2F2;
-    border: 1px solid brown;
+    border: none;
     box-shadow: 0 0 0 2px #F2F2F2;
     -webkit-transition: all 0.2s; /* Safari */
     transition: all 0.2s;
@@ -29,8 +32,19 @@ ion-content.padding.scroll-content.ionic-scroll{
 }
 
 .list.card.full .item{
-	background-color: #F2F2F2;
+	background-color: #F0EFD7;
+
 	color: black;
+}
+
+.list.card.full .item .divimage{
+	background-color:#FAF9E0;
+	    margin-top: 15%;
+
+}
+
+.list.card.full .item img{
+	margin-left: 35%;
 }
 
 .list.card.full.potion{
@@ -244,6 +258,10 @@ line-height: 0;
 min-width: 0;
 width: 24px;
 padding: 0 0;
+}
+
+.testbar .button{
+	margin:0;
 }
 .item.test{
 	width: 100%;

@@ -57,21 +57,23 @@
           <h2>{{card.name}}</h2>
           <p class="rarity">{{card.rarity}}</p>
 
-          <div ng-if="card.type == 'ingredient'" class="iconroundi"></div>
-          <div ng-if="card.type == 'trap'" class="iconroundt"></div>
-          <div ng-if="card.type == 'selftrap'" class="iconrounds"></div>
+          
+
+          <div class="divimage">
+          <img class="full-image ingred" src="../img/{{card.img}}">
+        </div>
+
         </div>
         
         <div class="item item-body">
 
-          <img class="full-image" src="{{card.img}}">
           <p>
            {{card.descrip}}
           </p>
          
         </div>
         
-        <div class="button-bar">
+        <div class="button-bar testbar">
         <button class="button button-block button-energized" ng-if="custom && card.type != 'ingredient'">Utiliser</button>
         <button class="button button-block button-dark" ng-show="custom" ng-click="defausser(card)">Défausser</button>
         </div>
