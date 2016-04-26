@@ -192,9 +192,9 @@ background-image: url("../img/ForestScene-01.svg");
 	margin-top: -50px;
 }
 
-.list.card.full.custompotion{
+.list.card.full.potion.cardflip.custompotion{
 
-	width: 130%;
+	width: 20%;
 	height:60%;
 	z-index: 100;
 
