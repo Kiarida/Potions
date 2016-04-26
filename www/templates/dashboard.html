@@ -2,7 +2,7 @@
   <ion-content class="padding" style="background-image:url({{background}});" >
   <div class="row potions">
     <div ng-repeat='carte in [0,1]' class="col"> 
-      <div ng-if='potions[carte].name' ng-init="card = potions[carte]" ng-class="{'fabricated':card.created}" class ="list card full" ng-click="custompotion=!custompotion">
+      <div ng-if='potions[carte].name' ng-init="card = potions[carte]" ng-class="{'fabricated':card.created, 'custompotion': custompotion }" class ="list card full" ng-click="custompotion=!custompotion">
         <div class="item">  
           <h2>{{card.name}}</h2><p>{{card.rarity}}</p>
           
@@ -12,14 +12,14 @@
 
         <button ng-show="custompotion && !card.created" ng-click="creerPotion(card)">Fabriquer</button>
         <button ng-show="custompotion && card.created" ng-click="userPotion(card)">Utiliser</button>
-          <img class="full-image" src="{{card.img}}">
+          <img class="full-image" style="width:250px"
+           src="{{card.img}}">
           <p>
-            Effet : {{card.effect}}
-
-           {{card.desc}}
+            <b>Effet</b> : {{card.effect}}
           </p>
+            <b>Ingrédients :</b>
           <p ng-repeat="ingredient in card.ingredients">
-            {{ingredient.name}} ({{ingredient.zone}})
+             {{ingredient.name}} ({{ingredient.zone}})
           </p>
 
         </div>
@@ -46,7 +46,7 @@
   <div class="row">
     <div ng-repeat='card in deck track by $index' class="col">
       <div ng-if='!card.name'  class="list card empty">
-        <div class="item col">C'est vide</div>
+        <div class="item col"></div>
       </div>
       <div ng-if='card.name' id="cartelem{{$index}}"   ng-class="{'touched':custom}" class ="list card full" ng-click="custom=!custom">
 
