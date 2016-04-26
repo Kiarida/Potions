@@ -229,7 +229,7 @@ createCardPotion("Potion verte", 1, "Potion13.png", "Vous pouvez récolter deux 
 var ingredientpotion8 = [{"name":"Feuille de fougère royale", "zone":"Forêt"}, {"name":"Épine de cactus", "zone":"Désert"}];
 createCardPotion("Potion piquante", 1, "Potion14.png", "Vous pouvez avancer de deux cases et récolter l'ingrédient de la dernière case pendant deux tours", "Une potion qui déchire", ingredientpotion8);
 
-var ingredientpotion9 = [{"name":"Résine de baobab", "zone":"Forêt"}, {"name":"Grume de bois mort", "zone":"Marécage"}];
+var ingredientpotion9 = [{"name":"Résine de sapin", "zone":"Forêt"}, {"name":"Grume de bois mort", "zone":"Marécage"}];
 createCardPotion("Potion boisée", 1, "Potion15.png", "Vous pouvez jouer pendant deux tours", "Une potion qui sent le bois", ingredientpotion9);
 
 var ingredientpotion10 = [{"name":"Poil de sanglier", "zone":"Forêt"}, {"name":"Poil de dromadaire", "zone":"Désert"}];
