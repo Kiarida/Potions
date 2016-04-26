@@ -182,11 +182,11 @@ createCard("Faux diamant", "trap", 1, "PiegeThrow.png", "", "grotte", "Défausse
 
 
 //Ingrédients de la montagne
-createCard("Aiguille de pin", "ingredient", 1, "aiguille de pin.png", "Une aiguille d'un sapin surplombant la montagne", "montagne", null, null);
-createCard("Corne de bouquetin", "ingredient", 2, "corne de bouquetin.png", "Une corne perdue par un bouquetin", "montagne", null, null);
-createCard("Flocon de neige", "ingredient", 1, "flocon de neige.jpg", "Un flocon tombé du ciel lors d'une tempête de neige", "montagne", null, null);
-createCard("Campanule", "ingredient", 1, "campanule.png", "Une jolie fleur violette", "montagne", null, null);
-createCard("Plume d'aigle", "ingredient", 1, "plume d'aigle.png", "Une plume perdue pendant un vol majestueux", "montagne", null, null);
+createCard("Aiguille de pin", "ingredient", 1, "FeuilleChene.png", "Une aiguille d'un sapin surplombant la montagne", "montagne", null, null);
+createCard("Corne de bouquetin", "ingredient", 2, "FeuilleChene.png", "Une corne perdue par un bouquetin", "montagne", null, null);
+createCard("Flocon de neige", "ingredient", 1, "FeuilleChene.png", "Un flocon tombé du ciel lors d'une tempête de neige", "montagne", null, null);
+createCard("Campanule", "ingredient", 1, "FeuilleChene.png", "Une jolie fleur violette", "montagne", null, null);
+createCard("Plume d'aigle", "ingredient", 1, "FeuilleChene.png", "Une plume perdue pendant un vol majestueux", "montagne", null, null);
 
 createCard("Avalanche", "selftrap", 1, "PiegeSelf.png", "", "montagne", "Vous passez votre tour.", null);
 createCard("Yéti", "trap", 1, "PiegeThrow.png", "", "montagne", "Vous êtes téléporté.", null);
