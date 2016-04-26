@@ -141,6 +141,7 @@ ion-content.padding.scroll-content.ionic-scroll{
 
 }
 .zone.desert{
+	position: absolute;
 	left:40%;
 	top:70%;
 	background-image: url("../img/DesertLogo.png");
