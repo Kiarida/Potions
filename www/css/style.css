@@ -119,6 +119,7 @@ ion-content.padding.scroll-content.ionic-scroll{
 
 
 .zone.foret{
+	position: absolute;
 	left:40%;
 	top:10%;
 
@@ -126,32 +127,34 @@ ion-content.padding.scroll-content.ionic-scroll{
 }
 
 .zone.plaine{
-	left:39%;
-	top:31%;
+	position: absolute;
+	left:59%;
+	top:26%;
 	background-image: url("../img/SwampLogo.png");
 
 }
 .zone.lac{
-	left:19.5%;
-	top:68%;
+	position: absolute;
+	left:59%;
+	top:55%;
 	background-image: url("../img/LakeLogo.png");
 
 }
 .zone.desert{
-	left:-19%;
-	top:90%;
+	left:40%;
+	top:70%;
 	background-image: url("../img/DesertLogo.png");
 
 }
 .zone.grotte{
-	left:-55%;
-	top:30%;
+	left:21%;
+	top:55%;
 	background-image: url("../img/CaveLogo.png");
 
 }
 .zone.montagne{
-	left: 22%;
-	top: 35%;	
+	left: 21%;
+	top: 26%;	
 	background-image: url("../img/MountainLogo.png");
 
 }
