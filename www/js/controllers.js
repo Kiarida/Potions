@@ -65,13 +65,12 @@ angular.module('starter.controllers', [])
       'effect':effect,
       "effectabr":effectabr
     }
+
     if(ingredient.type != "ingredient"){
       $scope.globaltrap.push(ingredient);
       //$scope.deck.push(ingredient);
     }
-    if(ingredient.name=="Mousse"){
-      $scope.deck[0]=ingredient;
-    }
+    
 
     switch(zone){
       case "foret":
@@ -130,8 +129,8 @@ createCard("Résine de sapin", "ingredient", 1, "FeuilleChene.png", "La résine 
 createCard("Feuille de fougère royale", "ingredient", 1, "FeuilleChene.png", "Une feuille de la plus belle fougère de la forêt.", "foret", null, null);
 createCard("Noisette", "ingredient", 1, "FeuilleChene.png", "Une noisette oubliée par un écureuil volant.", "foret", null, null);
 
-createCard("Piège forestier", "selftrap", 1, "piege.png", "", "foret", "Vous devez défausser une carte.", null);
-createCard("Piège à écureuil", "trap", 1, "piege.png", "", "foret", "Vous devez passer votre tour.", null);
+createCard("Piège forestier", "selftrap", 1, "PiegeSelf.png", "", "foret", "Vous devez défausser une carte.", null);
+createCard("Piège à écureuil", "trap", 1, "PiegeThrow.png", "", "foret", "Vous devez passer votre tour.", null);
 
 
 /*
@@ -151,8 +150,8 @@ createCard("Larve", "ingredient", 1, "FeuilleChene.png", "Une larve venant d'éc
 createCard("Roseau", "ingredient", 1, "FeuilleChene.png", "Une plante qui pousse au bord de l'eau", "lac", null, null);
 createCard("Écaille de poisson", "ingredient", 1, "FeuilleChene.png", "Une écaille laissée par un poisson qui se baladait", "lac", null, null);
 
-createCard("Piège aquatique", "selftrap", 1, "piege.png", "", "lac", "Vous devez passer votre tour.", null);
-createCard("Piège à crabe", "trap", 1, "piege.png", "", "lac", "Défaussez une carte.", null);
+createCard("Piège aquatique", "selftrap", 1, "PiegeSelf.png", "", "lac", "Vous devez passer votre tour.", null);
+createCard("Piège à crabe", "trap", 1, "PiegeThrow.png", "", "lac", "Défaussez une carte.", null);
 
 
 
@@ -163,8 +162,8 @@ createCard("Eau d'oasis", "ingredient", 2, "FeuilleChene.png", "Une ressource ra
 createCard("Poil de dromadaire", "ingredient", 1, "FeuilleChene.png", "Un poil de cet animal à une bosse", "desert", null, null);
 createCard("Feuille de palmier", "ingredient", 1, "FeuilleChene.png", "Une feuille tombée d'un beau palmier", "desert", null, null);
 
-createCard("Sables mouvants", "trap", "", "piege.png", "", "desert", "Vous téléportez votre adversaire.", null);
-createCard("Cactus piégé", "selftrap", "", "piege.png", "", "desert", "Vous donnez une carte à votre adversaire.", null);
+createCard("Sables mouvants", "trap", "", "PiegeThrow.png", "", "desert", "Vous téléportez votre adversaire.", null);
+createCard("Cactus piégé", "selftrap", "", "PiegeSelf.png", "", "desert", "Vous donnez une carte à votre adversaire.", null);
 
 
 
@@ -176,8 +175,8 @@ createCard("Ardoise", "ingredient", 1, "FeuilleChene.png", "Un morceau d'ardoise
 createCard("Charbon", "ingredient", 1, "FeuilleChene.png", "Un morceau de charbon pour faire un petit feu", "grotte", null, null);
 createCard("Minerai", "ingredient", 1, "FeuilleChene.png", "Un roche contenant de beaux mineraux", "grotte", null, null);
 
-createCard("Chauve-souris enragée", "selftrap", 1, "piege.png", "", "grotte", "Défaussez une carte.", null);
-createCard("Faux diamant", "trap", 1, "piege.png", "", "grotte", "Défaussez une carte.", null);
+createCard("Chauve-souris enragée", "selftrap", 1, "PiegeSelf.png", "", "grotte", "Défaussez une carte.", null);
+createCard("Faux diamant", "trap", 1, "PiegeThrow.png", "", "grotte", "Défaussez une carte.", null);
 
 
 
@@ -189,8 +188,8 @@ createCard("Flocon de neige", "ingredient", 1, "flocon de neige.jpg", "Un flocon
 createCard("Campanule", "ingredient", 1, "campanule.png", "Une jolie fleur violette", "montagne", null, null);
 createCard("Plume d'aigle", "ingredient", 1, "plume d'aigle.png", "Une plume perdue pendant un vol majestueux", "montagne", null, null);
 
-createCard("Avalanche", "selftrap", 1, "piege.png", "", "montagne", "Vous passez votre tour.", null);
-createCard("Yéti", "trap", 1, "piege.png", "", "montagne", "Vous êtes téléporté.", null);
+createCard("Avalanche", "selftrap", 1, "PiegeSelf.png", "", "montagne", "Vous passez votre tour.", null);
+createCard("Yéti", "trap", 1, "PiegeThrow.png", "", "montagne", "Vous êtes téléporté.", null);
 
 
 
@@ -199,8 +198,8 @@ createCard("Grume de bois mort", "ingredient", 1, "FeuilleChene.png", "Une grume
 createCard("Vas putride", "ingredient", 1, "FeuilleChene.png", "Une accumulation de vase pendant des années", "marecage", null, null);
 createCard("Goudron", "ingredient", 1, "FeuilleChene.png", "Du goudron obtenu depuis diverses matières", "marecage", null, null);
 
-createCard("Moustiques", "selftrap", 1, "piege.png", "", "marecage", "Défaussez une carte", null);
-createCard("Odeur putride", "trap", 1, "piege.png", "", "marecage", "Vous passez votre tour.", null);
+createCard("Moustiques", "selftrap", 1, "PiegeSelf.png", "", "marecage", "Défaussez une carte", null);
+createCard("Odeur putride", "trap", 1, "PiegeThrow.png", "", "marecage", "Vous passez votre tour.", null);
 
 
 //Potions de niveau 2

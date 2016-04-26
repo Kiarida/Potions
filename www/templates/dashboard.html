@@ -56,13 +56,11 @@
         <div class="item">
           <h2>{{card.name}}</h2>
           <p class="rarity">{{card.rarity}}</p>
-          <div class="divimage">
-            <img class="full-image ingred" src="../img/{{card.img}}">
-          </div>
+          
         </div>
         
         <div class="item item-body">
-
+           <img class="full-image ingred" src="../img/{{card.img}}">
           <p ng-if="card.type=='ingredient'">
            {{card.descrip}}
           </p>
