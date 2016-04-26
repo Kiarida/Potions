@@ -32,7 +32,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DeckCtrl', function($scope, $ionicModal, $rootScope ,$state){
-  $scope.deck=[];
+  $scope.deck=["empty","empty","empty","empty","empty","empty"];
   $scope.background="../img/Tower.svg";
   $scope.globalpotions=[];
   $scope.potions=[];
@@ -65,7 +65,7 @@ angular.module('starter.controllers', [])
     }
     if(ingredient.type != "ingredient"){
       $scope.globaltrap.push(ingredient);
-      $scope.deck.push(ingredient);
+      //$scope.deck.push(ingredient);
     }
     switch(zone){
       case "foret":
@@ -249,39 +249,48 @@ if(debut ==true){
  piocherdebut();
  
   $scope.piocher=function(zone){
-    
-    
+    var stop=-1;
+      for(var i=0; i<6; i++){
+        
+        if(!$scope.deck[i].name){
+          
+          stop=i;
+          break;
+        }
+      }
+      console.log("fin ?");
       switch(zone){
       case "foret":
       var random = Math.floor((Math.random() * ($scope.foret.length -1)));
-      $scope.deck.push($scope.foret[random]);
+    
+      $scope.deck[stop]=$scope.foret[random];
 
       $scope.background="../img/ForestScene-01.svg";
       break;
       case "plaine":
       var random = Math.floor((Math.random() * ($scope.marecage.length -1)));
       
-      $scope.deck.push($scope.marecage[random]);
+      $scope.deck[stop]=$scope.marecage[random];
       $scope.background="../img/SwampScene.svg";
       break;
       case "desert":
       var random = Math.floor((Math.random() * ($scope.desert.length -1)));
-      $scope.deck.push($scope.desert[random]);
+      $scope.deck[stop]=$scope.desert[random];
       $scope.background="../img/DesertScene.svg";
       break;
       case "lac":
       var random = Math.floor((Math.random() * ($scope.lac.length -1)));
-      $scope.deck.push($scope.lac[random]);
+      $scope.deck[stop]=$scope.lac[random];
       $scope.background="../img/LakeScene.svg";
       break;
       case "grotte":
       var random = Math.floor((Math.random() * ($scope.grotte.length -1)));
-      $scope.deck.push($scope.grotte[random]);
+      $scope.deck[stop]=$scope.grotte[random];
       $scope.background="../img/CaveScene.svg";
       break;
       case "montagne":
       var random = Math.floor((Math.random() * ($scope.montagne.length -1)));
-      $scope.deck.push($scope.montagne[random]);
+      $scope.deck[stop]=$scope.montagne[random];
       $scope.background="../img/MountainScene.svg";
       break;
     
@@ -310,13 +319,14 @@ if(debut ==true){
     //console.log($scope.deck);
     //console.log($scope.deck.indexOf(card));
     //console.log($scope.deck);
-    $scope.$apply(    
-      $scope.deck.splice($scope.deck.indexOf(card), 1)
-    );
+       
+      $scope.deck.splice($scope.deck.indexOf(card), 1);
+      $scope.deck.push("empty");
+    
   }
 
   $scope.showModal=function(){
-    if($scope.deck.length == 6){
+    if($scope.deck[5].name){
       console.log("on doit défausser");
     }
       else{

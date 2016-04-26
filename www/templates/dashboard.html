@@ -44,11 +44,11 @@
   </div>
 
   <div class="row">
-    <div ng-repeat='carte in [0,1,2,3,4,5] track by $index' class="col">
-      <div ng-if='!deck[carte].name'  class="list card empty">
+    <div ng-repeat='card in deck track by $index' class="col">
+      <div ng-if='!card.name'  class="list card empty">
         <div class="item col">C'est vide</div>
       </div>
-      <div ng-if='deck[carte].name' id="cartelem{{$index}}" ng-init="card=deck[carte]"  ng-class="{'touched':custom}" class ="list card full" ng-click="custom=!custom">
+      <div ng-if='card.name' id="cartelem{{$index}}"   ng-class="{'touched':custom}" class ="list card full" ng-click="custom=!custom">
 
         <div class="item">
           <h2>{{card.name}}</h2>

@@ -15,24 +15,25 @@
               flip-back="['custom:FLIP_EVENT_IN']"
               duration="800"
               timing-function="ease-in-out"
-              ng-show="random > -1"
+              ng-show="random > -1 && !rotate"
               >
 
         <flippy-back>
           <div class="list card full potion">
-            <div class="item">
+            <div class="item" style="background-image: url('../img/CardBG.png')"></div>
          
-        </div>
-        <div class="item item-body">
+        
+            <div class="item item-body"></div>
+            
           
 
         </div>
-      </div>
+      
       <button class="button button-block button-royal" ng-click="randomize(); rotate=!rotate"> Récupérer </button>
         </flippy-back>
 
         <flippy-front>
-            <div class ="list card full potion" ng-model="globalpotions[random]" ng-init="globalpotions[random]">
+            <div class ="list card full potion" ng-model="globalpotions[random]" style="background-image: url('../img/CardBG.png')" ng-init="globalpotions[random]">
                 <div class="item">
                   <h2>{{globalpotions[random].name}}</h2><p class="rarity">{{globalpotions[random].rarity}}</p>
                 </div>
