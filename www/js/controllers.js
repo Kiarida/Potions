@@ -220,7 +220,7 @@ if(debut ==true){
             $scope.modal.hide();
           };
           $scope.piochepaquet=function(){ 
-           
+            console.log("watf");
             $scope.random = Math.floor((Math.random() * ($scope.globalpotions.length -1)));
             
             compteur++;
