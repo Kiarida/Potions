@@ -37,11 +37,13 @@
                   <h2>{{globalpotions[random].name}}</h2><p class="rarity">{{globalpotions[random].rarity}}</p>
                 </div>
                 <div class="item item-body">
-                <img class="full-image" src="{{globalpotions[random].img}}">
+                <img class="full-image" src="../img/{{globalpotions[random].img}}">
+                <p>{{globalpotions[random].desc}}</p>
                   <p>
+
                     <b>Effet : </b>{{globalpotions[random].effect}}
 
-                   {{globalpotions[random].desc}}
+                   
                   </p>
                   <p ng-repeat="ingredient in card.ingredients">
                     {{ingredient.name}} ({{ingredient.zone}})

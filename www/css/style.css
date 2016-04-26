@@ -196,9 +196,13 @@ background: transparent;
 .row.potions .list.card.full.custompotion{
 
 	width: 20%;
-	height:60%;
+	height:65%;
 	z-index: 100;
 
+}
+
+.row.potions .list.card.full.custompotion .item.item-body{
+	min-height: 269px;
 }
 
 
@@ -228,6 +232,14 @@ background: transparent;
 	min-height: 163px;
 
 }
+
+.item.item-body{
+	font-size:14px;
+}
+.list.card.full.potion.cardflip .item.item-body{
+	min-height: 100%;
+}
+
 .list.card.full .item .rarity{
 	float:right;
 	display: inline-block;
@@ -274,4 +286,8 @@ padding: 0 0;
 	height: 100%;
 	background-image: url('../img/CardBG-1.png');
 	background-size: 100%;
+}
+
+.list.card.full .item.item-body img{
+	width: 30%;
 }

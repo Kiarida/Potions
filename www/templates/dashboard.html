@@ -4,7 +4,7 @@
     <div ng-repeat='carte in [0,1]' class="col"> 
       <div ng-if='potions[carte].name' ng-init="card = potions[carte]" ng-class="{'fabricated':card.created, 'custompotion': custompotion }" class ="list card full" ng-click="custompotion=!custompotion">
         <div class="item">  
-          <h2>{{card.name}}</h2><p>{{card.rarity}}</p>
+          <h2>{{card.name}}</h2><p class="rarity">{{card.rarity}}</p>
           
         </div>
 
@@ -13,8 +13,8 @@
           
         
           
-          <img class="full-image" style="width:250px"
-           src="{{card.img}}">
+          <img class="full-image" 
+           src="../img/{{card.img}}">
           <p>
             <b>Effet</b> : {{card.effect}}
           </p>
@@ -24,8 +24,8 @@
           </p>
 
         </div>
-        <button class="button button-royal" ng-show="custompotion && !card.created" ng-click="creerPotion(card)">Fabriquer</button>
-        <button class="button button-royal" ng-show="custompotion && card.created" ng-click="userPotion(card)">Utiliser</button>
+        <button class="button button-block button-royal" ng-show="custompotion && !card.created" ng-click="creerPotion(card)">Fabriquer</button>
+        <button class="button button-block button-royal" ng-show="custompotion && card.created" ng-click="userPotion(card)">Utiliser</button>
       </div>
       <div ng-if='!potions[carte].name' class="list card empty">
         <div class="item">C'est vide</div>
@@ -35,7 +35,7 @@
   <div class="effets">
     <select ng-model="searchtrap" ng-options="effet.name for effet in globaltrap" >
       <option></option>
-      {{searchtrap}}
+      
     </select>
     <button class="button button-balanced" ng-click="ajouterpiege(searchtrap)">+</button>
     <div ng-repeat="effetp in effetpos">{{effetp.effect}}<button class="button button-assertive" ng-click="deleteEffectPos()">x</button></div>
@@ -56,25 +56,29 @@
         <div class="item">
           <h2>{{card.name}}</h2>
           <p class="rarity">{{card.rarity}}</p>
-
-          
-
           <div class="divimage">
-          <img class="full-image ingred" src="../img/{{card.img}}">
-        </div>
-
+            <img class="full-image ingred" src="../img/{{card.img}}">
+          </div>
         </div>
         
         <div class="item item-body">
 
-          <p>
+          <p ng-if="card.type=='ingredient'">
            {{card.descrip}}
+          </p>
+          <p ng-if="card.type=='trap'">
+            <b>Piège : adversaire</b><br>
+           {{card.effect}}
+          </p>
+          <p ng-if="card.type=='selftrap'">
+            <b>Piège : porteur</b><br>
+           {{card.effect}}
           </p>
          
         </div>
         
         <div class="button-bar testbar">
-        <button class="button button-block button-energized" ng-if="custom && card.type != 'ingredient'">Utiliser</button>
+        <button class="button button-block button-energized" ng-if="custom && card.type != 'ingredient'" ng-click="useTrap(card)">Utiliser</button>
         <button class="button button-block button-dark" ng-show="custom" ng-click="defausser(card)">Défausser</button>
         </div>
       </div>
