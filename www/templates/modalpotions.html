@@ -32,20 +32,21 @@
         </flippy-front>
 
         <flippy-back>
-            <div class ="list card full potion cardflip" ng-model="globalpotions[random]" ng-init="globalpotions[random]">
+            <div class ="list card full potion cardflip" ng-model="nicecard" >
                 <div class="item">
-                  <h2>{{globalpotions[random].name}}</h2><p class="rarity">{{globalpotions[random].rarity}}</p>
+                  <h2>{{nicecard.name}}</h2><p class="rarity">{{nicecard.rarity}}</p>
                 </div>
                 <div class="item item-body">
-                <img class="full-image" src="../img/{{globalpotions[random].img}}">
-                <p>{{globalpotions[random].desc}}</p>
+                <img class="full-image" src="../img/{{nicecard.img}}">
+               
                   <p>
 
-                    <b>Effet : </b>{{globalpotions[random].effect}}
+                    <b>Effet : </b>{{nicecard.effect}}
 
                    
                   </p>
-                  <p ng-repeat="ingredient in card.ingredients">
+                  <b>Ingrédients :</b>
+                  <p ng-repeat="ingredient in nicecard.ingredients">
                     {{ingredient.name}} ({{ingredient.zone}})
                   </p>
 

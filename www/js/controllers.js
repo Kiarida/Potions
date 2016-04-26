@@ -245,6 +245,7 @@ var debut = true;
 var compteur = 0;
 $scope.random =-1;
 $scope.rotate=true;
+$scope.nicecard="";
 
 var piocherdebut = function(){
 
@@ -267,10 +268,11 @@ if(debut ==true){
           $scope.piochepaquet=function(){ 
             if(compteur ==0){
               $scope.random = Math.floor((Math.random() * ($scope.globalpotionseasy.length -1)));
+              $scope.nicecard=$scope.globalpotionseasy[$scope.random];
             }
             if(compteur ==1){
               $scope.random = Math.floor((Math.random() * ($scope.globalpotionsdiff.length -1)));
-
+              $scope.nicecard=$scope.globalpotionsdiff[$scope.random];
             }
             
             compteur++;
@@ -279,7 +281,7 @@ if(debut ==true){
           }
           $scope.randomize=function(){
             if(compteur==1){
-              $scope.potions.push($scope.globalpotionseasy[$scope.random]);
+                $scope.potions.push($scope.globalpotionseasy[$scope.random]);
             }
             if(compteur==2){
               $scope.potions.push($scope.globalpotionsdiff[$scope.random]);
@@ -361,10 +363,12 @@ if(debut ==true){
     $scope.effetneg=[trap];
 
   //$scope.globaltrap=[];
-     $scope.deck.splice($scope.deck.indexOf(trap), 1);      
+     $scope.deck.splice($scope.deck.indexOf(trap), 1);  
+     $scope.deck.push("empty");    
     }
     else{
       $scope.deck.splice($scope.deck.indexOf(trap), 1);
+      $scope.deck.push("empty");
     }
   }
 
