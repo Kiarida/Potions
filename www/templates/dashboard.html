@@ -1,16 +1,10 @@
 <ion-view hide-nav-bar="true">
   <ion-content class="padding" style="background-image:url({{background}});" >
   <div class="row potions">
-      <!-- <div ng-if="potions.length == 0" class="list card empty col" ng-repeat="carte in [0,1,2]">
-        <div class="item">C'est vide</div>
-      </div>
-    <div ng-if="potions.length > 0"> -->
-    <div ng-repeat='carte in [0,1,2]' class="col">
-      
+    <div ng-repeat='carte in [0,1]' class="col"> 
       <div ng-if='potions[carte].name' ng-init="card = potions[carte]" ng-class="{'fabricated':card.created}" class ="list card full" ng-click="custompotion=!custompotion">
-        <div class="item">
-        
-          <h2>{{card.name}}<p>{{card.rarity}}</p></h2>
+        <div class="item">  
+          <h2>{{card.name}}</h2><p>{{card.rarity}}</p>
           
         </div>
 
@@ -35,9 +29,18 @@
       </div>
     </div>
   </div>
-
+  <div class="effets">
+    <select ng-model="searchtrap" ng-options="effet.name for effet in globaltrap" >
+      <option></option>
+      {{searchtrap}}
+    </select>
+    <button class="button button-balanced" ng-click="ajouterpiege(searchtrap)">+</button>
+    <div ng-repeat="effetp in effetpos">{{effetp.effect}}<button class="button button-assertive" ng-click="deleteEffectPos()">x</button></div>
+    <div ng-repeat="effetn in effetneg">{{effetn.effect}}<button class="button button-assertive" ng-click="deleteEffectNeg()">x</button></div>
+  </div>
+  </div>
   <div class="pioche">
-    <button ng-click="showModal()">PIOCHER</button>
+    <button class="button button-royal"ng-click="showModal()">PIOCHER</button>
   </div>
 
   <div class="row">
@@ -65,9 +68,12 @@
          
         </div>
         
-        <button ng-if="custom && card.type != 'ingredient'">Utiliser</button>
-        <button ng-show="custom" ng-click="defausser(card)">Défausser</button>
+        <div class="button-bar">
+        <button class="button button-energized" ng-if="custom && card.type != 'ingredient'">Utiliser</button>
+        <button class="button button-dark" ng-show="custom" ng-click="defausser(card)">Défausser</button>
+        </div>
       </div>
+
     </div>
   </div>
   </ion-content>

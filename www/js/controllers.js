@@ -44,6 +44,10 @@ angular.module('starter.controllers', [])
   $scope.montagne=[];
   $scope.custom;
   $scope.custompotion;
+  $scope.effetpos=[];
+  $scope.effetneg=[];
+  $scope.globaltrap=[];
+  $scope.searchtrap="";
 
 
 
@@ -58,6 +62,10 @@ angular.module('starter.controllers', [])
       'zone':zone,
       'effect':effect,
       "effectabr":effectabr
+    }
+    if(ingredient.type != "ingredient"){
+      $scope.globaltrap.push(ingredient);
+      $scope.deck.push(ingredient);
     }
     switch(zone){
       case "foret":
@@ -108,6 +116,9 @@ createCard("Résine de baobab", "ingredient", 1, "résine de baobab.png", "La r�
 createCard("Feuille de fougère royale", "ingredient", 1, "feuille de fougère royale.png", "Une feuille de la plus belle fougère de la forêt", "foret", null, null);
 createCard("Noisette", "ingredient", 1, "noisette.png", "Une noisette oubliée par un écureuil volant", "foret", null, null);
 
+createCard("Noisette piégée", "selftrap", 1, "noisette.png", "Une noisette oubliée par un écureuil volant", "foret", "Vous ne pouvez pas jouer pendant 2 tours.", null);
+
+
 //Ingrédients du lac
 createCard("Vase", "ingredient", 1, "vase.png", "De la bourbe déposée au fond du lac", "lac", null, null);
 createCard("Coquillage", "ingredient", 1, "coquillage.png", "Un coquillage perdu au fond de l'eau", "lac", null, null);
@@ -115,6 +126,9 @@ createCard("Algue", "ingredient", 1, "algue.png", "Une algue qui s'est décroch�
 createCard("Larve", "ingredient", 1, "larve.png", "Une larve venant d'éclore", "lac", null, null);
 createCard("Roseau", "ingredient", 1, "roseau.png", "Une plante qui pousse au bord de l'eau", "lac", null, null);
 createCard("Écaille de poisson", "ingredient", 1, "écaille de poisson.png", "Une écaille laissée par un poisson qui se baladait", "lac", null, null);
+
+createCard("Ecaille piégée", "trap", 1, "noisette.png", "Une noisette oubliée par un écureuil volant", "foret", "Vous devez défausser une carte.", null);
+
 
 //Ingrédients du désert
 createCard("Sable", "ingredient", 1, "sable.png", "Des grains de sable à perte de vue", "desert", null, null);
@@ -188,9 +202,9 @@ $scope.random =-1;
 $scope.rotate=true;
 
 var piocherdebut = function(){
-  console.log("hila");
+
 if(debut ==true){
-  console.log("bla");
+
   $scope.modal= $ionicModal.fromTemplateUrl('templates/modalpotions.html', {
       scope: $scope,
             animation: 'slide-in-up'
@@ -281,6 +295,9 @@ if(debut ==true){
       //selon l'effet
 
 
+    $scope.effetneg=[trap];
+
+  //$scope.globaltrap=[];
      $scope.deck.splice($scope.deck.indexOf(trap), 1);      
     }
     else{
@@ -289,7 +306,13 @@ if(debut ==true){
   }
 
   $scope.defausser=function(card){
-    $scope.deck.splice($scope.deck.indexOf(card), 1);
+    console.log(card);
+    //console.log($scope.deck);
+    //console.log($scope.deck.indexOf(card));
+    //console.log($scope.deck);
+    $scope.$apply(    
+      $scope.deck.splice($scope.deck.indexOf(card), 1)
+    );
   }
 
   $scope.showModal=function(){
@@ -333,8 +356,23 @@ if(debut ==true){
 
   $scope.userPotion=function(potion){
     potion.created=false;
+    $scope.effetpos.push(potion);
+
+
   }
 
- 
+  $scope.deleteEffectPos=function(effet){
+    $scope.effetpos.splice($scope.effetpos.indexOf(effet));
+  } 
+  $scope.deleteEffectNeg=function(effet){
+    $scope.effetneg.splice($scope.effetneg.indexOf(effet));
+  } 
+  $scope.ajouterpiege=function(truc){
+    //console.log("HELLO");
+    console.log($scope.searchtrap);
+    $scope.effetneg.push(truc);
+  
+
+  }
 
 })

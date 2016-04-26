@@ -1,10 +1,13 @@
-<ion-modal-view style="width: 20%; height: 60%; margin-left:30%; margin-top:10%">
+<ion-modal-view style="width: 20%; height: 70%; margin-left:30%; margin-top:10%; background: transparent">
     
     <ion-content>
     <div class="draw potions">
-    <div ng-show="rotate" ng-click="piochepaquet(); rotate=!rotate" class="paquetpotions">
-        {{rotate}}
-    </div>
+        <div class="list card full potion" ng-show="rotate">
+            <div class="item test" ng-show="rotate" ng-click="piochepaquet(); rotate=!rotate" class="paquetpotions">
+            
+            </div>
+        </div>
+    
     
     <flippy
               class="fancy"
@@ -25,18 +28,18 @@
 
         </div>
       </div>
-      <button ng-click="randomize(); rotate=!rotate"> Ok </button>
+      <button class="button button-block button-royal" ng-click="randomize(); rotate=!rotate"> Récupérer </button>
         </flippy-back>
 
         <flippy-front>
             <div class ="list card full potion" ng-model="globalpotions[random]" ng-init="globalpotions[random]">
                 <div class="item">
-                  <h2>{{globalpotions[random].name}}<p>{{globalpotions[random].rarity}}</p></h2>
+                  <h2>{{globalpotions[random].name}}</h2><p class="rarity">{{globalpotions[random].rarity}}</p>
                 </div>
                 <div class="item item-body">
                 <img class="full-image" src="{{globalpotions[random].img}}">
                   <p>
-                    Effet : {{globalpotions[random].effect}}
+                    <b>Effet : </b>{{globalpotions[random].effect}}
 
                    {{globalpotions[random].desc}}
                   </p>
