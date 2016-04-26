@@ -147,12 +147,14 @@ ion-content.padding.scroll-content.ionic-scroll{
 
 }
 .zone.grotte{
+	position: absolute;
 	left:21%;
 	top:55%;
 	background-image: url("../img/CaveLogo.png");
 
 }
 .zone.montagne{
+	position: absolute;
 	left: 21%;
 	top: 26%;	
 	background-image: url("../img/MountainLogo.png");
@@ -222,7 +224,7 @@ background: transparent;
 }
 .list.card.full .item.item-body{
 	
-	min-height: 250px;
+	min-height: 163px;
 
 }
 .list.card.full .item .rarity{
