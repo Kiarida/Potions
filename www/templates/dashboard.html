@@ -1,5 +1,5 @@
 <ion-view hide-nav-bar="true">
-  <ion-content class="padding" style="background-image:url({{background}});" >
+  <ion-content class="padding" style="background-image:url({{background}});background-size:{{backsize}}; background-position: {{backpos}}" >
   <div class="row potions">
     <div ng-repeat='carte in [0,1]' class="col"> 
       <div ng-if='potions[carte].name' ng-init="card = potions[carte]" ng-class="{'fabricated':card.created, 'custompotion': custompotion }" class ="list card full" ng-click="custompotion=!custompotion">
