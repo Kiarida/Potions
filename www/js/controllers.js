@@ -276,11 +276,11 @@ if(debut ==true){
             $scope.modal.hide();
           };
           $scope.piochepaquet=function(){ 
-            if(compteur ==0){
+            if(compteur ==0 || compteur==1 || compteur == 2){
               $scope.random = Math.floor((Math.random() * ($scope.globalpotionseasy.length -1)));
               $scope.nicecard=$scope.globalpotionseasy[$scope.random];
             }
-            if(compteur ==1){
+            if(compteur ==3){
               $scope.random = Math.floor((Math.random() * ($scope.globalpotionsdiff.length -1)));
               $scope.nicecard=$scope.globalpotionsdiff[$scope.random];
             }
@@ -290,15 +290,15 @@ if(debut ==true){
 
           }
           $scope.randomize=function(){
-            if(compteur==1){
+            if(compteur==1 || compteur == 2 || compteur == 3){
                 $scope.potions.push($scope.globalpotionseasy[$scope.random]);
             }
-            if(compteur==2){
+            if(compteur==4){
               $scope.potions.push($scope.globalpotionsdiff[$scope.random]);
             }
             $scope.random=-1;
             $rootScope.$broadcast('FLIP_EVENT_IN');
-            if(compteur == 2){
+            if(compteur == 4){
               $scope.closeModal();
               debut=false;
             }
