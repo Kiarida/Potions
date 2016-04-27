@@ -322,44 +322,44 @@ if(debut ==true){
       $scope.deck[stop]=$scope.foret[random];
 
       $scope.background="../img/ForestScene-01.svg";
-      $scope.backsize="";
-      $scope.backpos="";
+      $scope.backsize="1800px";
+      $scope.backpos="-350px -100px";
       break;
       case "plaine":
       var random = Math.floor((Math.random() * ($scope.marecage.length -1)));
       
       $scope.deck[stop]=$scope.marecage[random];
       $scope.background="../img/SwampScene.svg";
-      $scope.backsize="1900px";
-      $scope.backpos="0 50px";
+      $scope.backsize="1600px";
+      $scope.backpos="-150px -148px";
       break;
       case "desert":
       var random = Math.floor((Math.random() * ($scope.desert.length -1)));
       $scope.deck[stop]=$scope.desert[random];
       $scope.background="../img/DesertScene.svg";
-      $scope.backsize="1900px";
-      $scope.backpos="0 50px";
+      $scope.backsize="1800px";
+      $scope.backpos="-200px -150px";
       break;
       case "lac":
       var random = Math.floor((Math.random() * ($scope.lac.length -1)));
       $scope.deck[stop]=$scope.lac[random];
       $scope.background="../img/LakeScene.svg";
-      $scope.backsize="1900px";
-      $scope.backpos="0 50px";
+      $scope.backsize="1600px";
+      $scope.backpos="-150px -148px";
       break;
       case "grotte":
       var random = Math.floor((Math.random() * ($scope.grotte.length -1)));
       $scope.deck[stop]=$scope.grotte[random];
       $scope.background="../img/CaveScene.svg";
-      $scope.backsize="1900px";
-      $scope.backpos="0 50px";
+      $scope.backsize="1700px";
+      $scope.backpos="-220px 0px";
       break;
       case "montagne":
       var random = Math.floor((Math.random() * ($scope.montagne.length -1)));
       $scope.deck[stop]=$scope.montagne[random];
       $scope.background="../img/MountainScene.svg";
-      $scope.backsize="1900px";
-      $scope.backpos="0 50px";
+      $scope.backsize="1800px";
+      $scope.backpos="-250px 0px";
       break;
     
     }
