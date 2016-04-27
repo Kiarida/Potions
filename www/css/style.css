@@ -16,9 +16,9 @@ margin-top: 15%;
 }
 
 ion-content.padding.scroll-content.ionic-scroll{
-	background-size: 1900px;
-	background-position-x: -520px;
-	background-position-y: -300px;
+	background-size: 1800px;
+	background-position-x: -250px;
+	background-position-y: -200px;
 }
 .list.card.full{
 	background-color: #F2F2F2;
