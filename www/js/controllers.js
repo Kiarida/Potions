@@ -119,15 +119,20 @@ angular.module('starter.controllers', [])
     //console.log($scope.potions[0]);
   }
 
+
+  //Mousse, Feuille Palmier, Feuille fougère, Epine cactus, Résine sapin, Grume bois, Poil sanglier
+// Poil dromadaire, Algue, Vase putride, Huile de roche, eau d'oasis, Crai, Sable, Corne bouqueetin, Ecaille poiss, 
+//Charbon, Vase, Minerai, Plume magique
+
 //Ingrédients de la forêt
 createCard("Poil de sanglier", "ingredient", 1, "FeuilleChene.png", "Un poil de sanglier perdu dans la forêt.", "foret", null, null);
-createCard("Champignon vénéneux", "ingredient", 2, "FeuilleChene.png", "Un gros champignon rouge et blanc.", "foret", null, null);
-createCard("Plume magique", "ingredient", 2, "FeuilleChene.png", "Une plume tombée d'un oiseau mystérieux.", "foret", null, null);
-createCard("Mousse", "ingredient", 1, "FeuilleChene.png", "De la mousse fantastique.", "foret", null, null);
+//createCard("Champignon vénéneux", "ingredient", 2, "FeuilleChene.png", "Un gros champignon rouge et blanc.", "foret", null, null);
+//createCard("Plume magique", "ingredient", 2, "FeuilleChene.png", "Une plume tombée d'un oiseau mystérieux.", "foret", null, null);
+//createCard("Mousse", "ingredient", 1, "FeuilleChene.png", "De la mousse fantastique.", "foret", null, null);
 createCard("Feuille de chêne", "ingredient", 1, "FeuilleChene.png", "Une feuille tombée d'un grand chêne après une tempête de vent.", "foret", null, null);
-createCard("Résine de sapin", "ingredient", 1, "FeuilleChene.png", "La résine d'un très grand arbre.", "foret", null, null);
-createCard("Feuille de fougère royale", "ingredient", 1, "FeuilleChene.png", "Une feuille de la plus belle fougère de la forêt.", "foret", null, null);
-createCard("Noisette", "ingredient", 1, "FeuilleChene.png", "Une noisette oubliée par un écureuil volant.", "foret", null, null);
+//createCard("Résine de sapin", "ingredient", 1, "FeuilleChene.png", "La résine d'un très grand arbre.", "foret", null, null);
+//createCard("Feuille de fougère royale", "ingredient", 1, "FeuilleChene.png", "Une feuille de la plus belle fougère de la forêt.", "foret", null, null);
+//createCard("Noisette", "ingredient", 1, "FeuilleChene.png", "Une noisette oubliée par un écureuil volant.", "foret", null, null);
 
 createCard("Piège forestier", "selftrap", 1, "PiegeSelf.png", "", "foret", "Vous devez défausser une carte.", null);
 createCard("Piège à écureuil", "trap", 1, "PiegeThrow.png", "", "foret", "Vous devez passer votre tour.", null);
@@ -143,11 +148,11 @@ donner une de ses cartes à l’adversaire -
 
 
 //Ingrédients du lac
-createCard("Vase", "ingredient", 1, "FeuilleChene.png", "De la bourbe déposée au fond du lac", "lac", null, null);
-createCard("Coquillage", "ingredient", 1, "FeuilleChene.png", "Un coquillage perdu au fond de l'eau", "lac", null, null);
+//createCard("Vase", "ingredient", 1, "FeuilleChene.png", "De la bourbe déposée au fond du lac", "lac", null, null);
+//createCard("Coquillage", "ingredient", 1, "FeuilleChene.png", "Un coquillage perdu au fond de l'eau", "lac", null, null);
 createCard("Algue", "ingredient", 1, "FeuilleChene.png", "Une algue qui s'est décrochée du fond du lac", "lac", null, null);
-createCard("Larve", "ingredient", 1, "FeuilleChene.png", "Une larve venant d'éclore", "lac", null, null);
-createCard("Roseau", "ingredient", 1, "FeuilleChene.png", "Une plante qui pousse au bord de l'eau", "lac", null, null);
+//createCard("Larve", "ingredient", 1, "FeuilleChene.png", "Une larve venant d'éclore", "lac", null, null);
+//createCard("Roseau", "ingredient", 1, "FeuilleChene.png", "Une plante qui pousse au bord de l'eau", "lac", null, null);
 createCard("Écaille de poisson", "ingredient", 1, "FeuilleChene.png", "Une écaille laissée par un poisson qui se baladait", "lac", null, null);
 
 createCard("Piège aquatique", "selftrap", 1, "PiegeSelf.png", "", "lac", "Vous devez passer votre tour.", null);
@@ -158,9 +163,9 @@ createCard("Piège à crabe", "trap", 1, "PiegeThrow.png", "", "lac", "Défausse
 //Ingrédients du désert
 createCard("Sable", "ingredient", 2, "FeuilleChene.png", "Des grains de sable à perte de vue", "desert", null, null);
 createCard("Épine de cactus", "ingredient", 1, "FeuilleChene.png", "Une épine de plante grasse", "desert", null, null);
-createCard("Eau d'oasis", "ingredient", 2, "FeuilleChene.png", "Une ressource rare dans le désert", "desert", null, null);
-createCard("Poil de dromadaire", "ingredient", 1, "FeuilleChene.png", "Un poil de cet animal à une bosse", "desert", null, null);
-createCard("Feuille de palmier", "ingredient", 1, "FeuilleChene.png", "Une feuille tombée d'un beau palmier", "desert", null, null);
+//createCard("Eau d'oasis", "ingredient", 2, "FeuilleChene.png", "Une ressource rare dans le désert", "desert", null, null);
+//createCard("Poil de dromadaire", "ingredient", 1, "FeuilleChene.png", "Un poil de cet animal à une bosse", "desert", null, null);
+//createCard("Feuille de palmier", "ingredient", 1, "FeuilleChene.png", "Une feuille tombée d'un beau palmier", "desert", null, null);
 
 createCard("Sables mouvants", "trap", "", "PiegeThrow.png", "", "desert", "Vous téléportez votre adversaire.", null);
 createCard("Cactus piégé", "selftrap", "", "PiegeSelf.png", "", "desert", "Vous donnez une carte à votre adversaire.", null);
@@ -168,11 +173,11 @@ createCard("Cactus piégé", "selftrap", "", "PiegeSelf.png", "", "desert", "Vou
 
 
 //Ingrédients de la grotte
-createCard("Craie", "ingredient", 2, "FeuilleChene.png", "Un morceau de cette roche blanche", "grotte", null, null);
+//createCard("Craie", "ingredient", 2, "FeuilleChene.png", "Un morceau de cette roche blanche", "grotte", null, null);
 createCard("Fossile", "ingredient", 1, "FeuilleChene.png", "Un fossile retrouvé au fond de la grotte", "grotte", null, null);
-createCard("Huile de roche", "ingredient", 2, "FeuilleChene.png", "De la roche mise en miette pour former de l'huile", "grotte", null, null);
-createCard("Ardoise", "ingredient", 1, "FeuilleChene.png", "Un morceau d'ardoise trouvé dans la grotte", "grotte", null, null);
-createCard("Charbon", "ingredient", 1, "FeuilleChene.png", "Un morceau de charbon pour faire un petit feu", "grotte", null, null);
+//createCard("Huile de roche", "ingredient", 2, "FeuilleChene.png", "De la roche mise en miette pour former de l'huile", "grotte", null, null);
+//createCard("Ardoise", "ingredient", 1, "FeuilleChene.png", "Un morceau d'ardoise trouvé dans la grotte", "grotte", null, null);
+//createCard("Charbon", "ingredient", 1, "FeuilleChene.png", "Un morceau de charbon pour faire un petit feu", "grotte", null, null);
 createCard("Minerai", "ingredient", 1, "FeuilleChene.png", "Un roche contenant de beaux mineraux", "grotte", null, null);
 
 createCard("Chauve-souris enragée", "selftrap", 1, "PiegeSelf.png", "", "grotte", "Défaussez une carte.", null);
@@ -182,11 +187,11 @@ createCard("Faux diamant", "trap", 1, "PiegeThrow.png", "", "grotte", "Défausse
 
 
 //Ingrédients de la montagne
-createCard("Aiguille de pin", "ingredient", 1, "FeuilleChene.png", "Une aiguille d'un sapin surplombant la montagne", "montagne", null, null);
+//createCard("Aiguille de pin", "ingredient", 1, "FeuilleChene.png", "Une aiguille d'un sapin surplombant la montagne", "montagne", null, null);
 createCard("Corne de bouquetin", "ingredient", 2, "FeuilleChene.png", "Une corne perdue par un bouquetin", "montagne", null, null);
 createCard("Flocon de neige", "ingredient", 1, "FeuilleChene.png", "Un flocon tombé du ciel lors d'une tempête de neige", "montagne", null, null);
-createCard("Campanule", "ingredient", 1, "FeuilleChene.png", "Une jolie fleur violette", "montagne", null, null);
-createCard("Plume d'aigle", "ingredient", 1, "FeuilleChene.png", "Une plume perdue pendant un vol majestueux", "montagne", null, null);
+//createCard("Campanule", "ingredient", 1, "FeuilleChene.png", "Une jolie fleur violette", "montagne", null, null);
+//createCard("Plume d'aigle", "ingredient", 1, "FeuilleChene.png", "Une plume perdue pendant un vol majestueux", "montagne", null, null);
 
 createCard("Avalanche", "selftrap", 1, "PiegeSelf.png", "", "montagne", "Vous passez votre tour.", null);
 createCard("Yéti", "trap", 1, "PiegeThrow.png", "", "montagne", "Vous êtes téléporté.", null);
@@ -194,7 +199,7 @@ createCard("Yéti", "trap", 1, "PiegeThrow.png", "", "montagne", "Vous êtes té
 
 
 //Ingrédients des marécages
-createCard("Grume de bois mort", "ingredient", 1, "FeuilleChene.png", "Une grume restée trop longtemps dans les marécages", "marecage", null, null);
+//createCard("Grume de bois mort", "ingredient", 1, "FeuilleChene.png", "Une grume restée trop longtemps dans les marécages", "marecage", null, null);
 createCard("Vase putride", "ingredient", 1, "FeuilleChene.png", "Une accumulation de vase pendant des années", "marecage", null, null);
 createCard("Goudron", "ingredient", 1, "FeuilleChene.png", "Du goudron obtenu depuis diverses matières", "marecage", null, null);
 
@@ -203,36 +208,39 @@ createCard("Odeur putride", "trap", 1, "PiegeThrow.png", "", "marecage", "Vous p
 
 
 //Potions de niveau 2
-var ingredientpotion1 = [{"name":"Huile de roche", "zone":"Grotte"}, {"name":"Eau d'oasis", "zone":"Désert"}];
+var ingredientpotion1 = [{"name":"Minerai", "zone":"Grotte"}, {"name":"Épine de cactus", "zone":"Désert"}];
 createCardPotion("Potion exotique", 2, "Potion1.png", "Vous pouvez récolter deux fois plus d'ingrédients pendant deux tours", "Une potion violette qui pétille", ingredientpotion1);
 
-var ingredientpotion2 = [{"name":"Craie", "zone":"Grotte"}, {"name":"Sable", "zone":"Désert"}];
+var ingredientpotion2 = [{"name":"Fossile", "zone":"Grotte"}, {"name":"Épine de cactus", "zone":"Désert"}];
 createCardPotion("Potion craieuse", 2, "Potion10.png", "Vous pouvez avancer de deux cases et récolter l'ingrédient de la dernière case pendant deux tours", "Une potion pas très liquide", ingredientpotion2);
 
 var ingredientpotion3 = [{"name":"Corne de bouquetin", "zone":"Montagne"}, {"name":"Écaille de poisson", "zone":"Lac"}];
 createCardPotion("Potion de la mer", 2, "Potion11.png", "Vous pouvez jouer pendant deux tours", "Une potion qui sent le poisson", ingredientpotion3);
 
-var ingredientpotion4 = [{"name":"Charbon", "zone":"Grotte"}, {"name":"Vase", "zone":"Lac"}];
+var ingredientpotion4 = [{"name":"Fossile", "zone":"Grotte"}, {"name":"Écaille de poisson", "zone":"Lac"}];
 createCardPotion("Potion noire", 2, "Potion2.png", "Vous pouvez passer une fois sur un volcan", "Une potion sombre", ingredientpotion4);
 
-var ingredientpotion5 = [{"name":"Minerai", "zone":"Grotte"}, {"name":"Plume magique", "zone":"Forêt"}];
+var ingredientpotion5 = [{"name":"Minerai", "zone":"Grotte"}, {"name":"Feuille de chêne", "zone":"Forêt"}];
 createCardPotion("Potion colorée", 2, "Potion12.png", "Vous pouvez contrer les pièges pendant trois tours", "Une potion qui en fait voir de toutes les couleurs", ingredientpotion5);
 
 /*var ingredientpotion6 = [{"name":"Champignon vénéneux", "zone":"Grotte"}, {"name":"Larve", "zone":"Lac"}];
 createCardPotion("Potion gluante", 2, "potion4.jpg", "Vous pouvez garder sept cartes dans votre sac à dos pendant deux tours", "Une potion qui colle aux mains", ingredientpotion6);
 */
 
+
+
+
 //Potions de niveau 1
-var ingredientpotion7 = [{"name":"Mousse", "zone":"Forêt"}, {"name":"Feuille de palmier", "zone":"Désert"}];
+var ingredientpotion7 = [{"name":"Poil de sanglier", "zone":"Forêt"}, {"name":"Sable", "zone":"Désert"}];
 createCardPotion("Potion verte", 1, "Potion13.png", "Vous pouvez récolter deux fois plus d'ingrédients", "Une potion riche en chlorophylle", ingredientpotion7);
 
-var ingredientpotion8 = [{"name":"Feuille de fougère royale", "zone":"Forêt"}, {"name":"Épine de cactus", "zone":"Désert"}];
+var ingredientpotion8 = [{"name":"Feuille de chêne", "zone":"Forêt"}, {"name":"Sable", "zone":"Désert"}];
 createCardPotion("Potion piquante", 1, "Potion14.png", "Vous pouvez avancer de deux cases et récolter l'ingrédient de la dernière case pendant deux tours", "Une potion qui déchire", ingredientpotion8);
 
-var ingredientpotion9 = [{"name":"Résine de sapin", "zone":"Forêt"}, {"name":"Grume de bois mort", "zone":"Marécage"}];
+var ingredientpotion9 = [{"name":"Poil de sanglier", "zone":"Forêt"}, {"name":"Goudron", "zone":"Marécage"}];
 createCardPotion("Potion boisée", 1, "Potion15.png", "Vous pouvez jouer pendant deux tours", "Une potion qui sent le bois", ingredientpotion9);
 
-var ingredientpotion10 = [{"name":"Poil de sanglier", "zone":"Forêt"}, {"name":"Poil de dromadaire", "zone":"Désert"}];
+var ingredientpotion10 = [{"name":"Poil de sanglier", "zone":"Forêt"}, {"name":"Sable", "zone":"Désert"}];
 createCardPotion("Potion animale", 1, "Potion3.png", "Vous pouvez passer une fois sur un volcan", "Une potion poilue", ingredientpotion10);
 
 var ingredientpotion11 = [{"name":"Algue", "zone":"Lac"}, {"name":"Vase putride", "zone":"Marécage"}];
@@ -241,6 +249,8 @@ createCardPotion("Potion odorante", 1, "Potion8.png", "Vous pouvez contrer les p
 /*var ingredientpotion12 = [{"name":"Noisette", "zone":"Forêt"}, {"name":"Coquillage", "zone":"Lac"}];
 createCardPotion("Potion à coquilles", 1, "potion12.jpg", "Vous pouvez garder sept cartes dans votre sac à dos pendant deux tours", "Une potion dure pour les dents", ingredientpotion12);
 */
+
+
 var debut = true;
 var compteur = 0;
 $scope.random =-1;
